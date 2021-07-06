@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+
+dist/
+
+
+#Env
+# .env
+# .vscode
+# .prettierrc.json
+# tsconfig.json
+# eslintrc.js 
+# .eslintignore

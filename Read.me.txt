@@ -1,0 +1,11 @@
+*WORKDIR/app:pour indiquer à Docker d'utiliser ce chemin comme emplacement par défaut pour toutes les commandes suivantes
+*COPY ["package.json", "package-lock.json*", "./"]:Nous copions les fichiers package.json et package-lock.json dans notre répertoire de travail /app.
+*RUN npm install:ne fois que nous avons nos fichiers package.json dans l'image, nous pouvons utiliser la commande RUN pour exécuter la commande npm install. Cela fonctionne exactement de la même manière que si nous exécutions npm install localement sur notre machine, mais cette fois, ces modules Node seront installés dans le répertoire node_modules à l'intérieur de notre image.
+*COPY . .
+*CMD ["npm", "start"]:Après l'installation de RUN npm, nous avons une image basée sur la version de nœud 12.18.1 et nous avons installé nos dépendances.
+COPIE . . ajoute notre code source dans l'image. Il prend tous les fichiers situés dans le répertoire courant et les copie dans l'image.
+Maintenant, nous voulons dire à Docker quelle commande nous voulons exécuter lorsque notre image est exécutée à l'intérieur d'un conteneur via CMD [ "npm", "start" ].
+
+et enfin on exécute la commande docker-compose up -d --build pour builder notre projet 
+
+
